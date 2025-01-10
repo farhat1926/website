@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: 0;
+  text-decoration: none;
+  transition: background-color 0.5ms ease;
+  scroll-behavior: smooth;
+}
+span{
+    color: deepskyblue;
+}
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+h1{
+    position: absolute;
+    top: 8%;
+    left: 30%;
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    font-family: "Fontdiner Swanky", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    transform: translate(1%, -55%);
+    animation: slideInFromLeft 1s ease-out forwards; /* Durasi dan jenis animasi */
+}
+p span{
+    color: rgb(171, 205, 92);
+}
+p{
+    position: absolute;
+    top: 30%;
+    left: 43%;
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 500;
+    transform: translate(1%, -55%);
+    animation: slideInFromLeft 1s ease-in forwards;
+}
+.img-container {
+    height: 100vh; /* Atur tinggi sesuai kebutuhan */
+}
+img{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.seri1{
+    position: absolute;
+    top: 60%;
+    left: 43%;
+    transform: translate(5%, -55%);
+    background-color: rgba(16, 20, 233, 0.616);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 30%;
+    border:   none;
+    box-shadow: rgb(red, green, blue);
+    font-size: 1.2rem;
+    outline: 0;
+    box-shadow: 2px 2px 7px rgba(55, 255, 0, 0.61),-2px -2px 7px rgba(121, 123, 121, 0.935),-2px -2px 7px rgba(250, 254, 250, 0.935);
+    font-weight:530 ;
+    letter-spacing: 2px;
+    overflow: hidden;
+    transition: all 500ms ease;
+  }
+.seri1::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    top: 0;
+    left: 100%;
+    border-radius: 30%;
+    z-index: -1;
+    transition: all 300ms ease;
+    opacity: 0.5;
+  }
+.seri1:hover::after{
+    left: 0;
+  
+  }
+.seri1:hover{
+    color: black;
+    border: 2px solid salmon;
+  
+  }

@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: #0c192c;
+}
+.container{
+    position:relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bubbles{
+    position: relative;
+    display: flex;
+}
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+    0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+   
+}
+.bubbles span:nth-child(even){
+background: #ff2d75;
+box-shadow: 0 0 0 10px #ff2d7544,
+    0 0 50px #ff2d75,
+    0 0 100px #ff2d75;
+}
+@keyframes animate
+{
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+}
+.marquee {
+    position: absolute;
+    top: 8%;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    color: #fff;
+}
+.marquee span {
+display: inline-block;
+padding-left: 100%;
+animation: marquee 10s linear infinite;
+}
+@keyframes marquee {
+0% { transform: translate(0, 0); }
+100% { transform: translate(-100%, 0); }
+}
+.box1{
+    width: 1300px;
+    height: 600px;
+    background-color: #fff;
+    margin-left: 5%;
+    margin-top: 8%;
+    margin-right: 5%;
+    box-shadow: 10px 10px 10px red;
+    border-radius: 40px;
+
+}
+.text-with-image {
+    display: inline-block; /* Mengatur agar teks dan gambar tampil secara inline */
+    vertical-align: auto; /* Mengatur posisi vertikal ke tengah */
+    padding-left: 40px;
+}
+.text-with-image img{
+    padding-left: 40%;
+}
+.centered-image {
+    width: 100px; /* Sesuaikan dengan ukuran gambar Anda */
+    height: auto; /* Menjaga rasio aspek gambar */
+    margin-left: 20px; /* Atur jarak antara teks dan gambar */
+}
+/* @font-face{
+    font-family: MyFont;
+    src: url("PauraqueSerifRoughRegular-VRVw.ttf");
+} */
+h2{
+    font-family: myfont;
+    padding-left: 40px;
+    font-size: 50px;
+    top: 40px;
+    padding-top: 20px;
+    transform: skew(25deg, 0deg);
+    /* text-align: center; */
+}
+h2 span{
+    color: orangered;
+}
+@font-face{
+    font-family: myfont;
+    src: url("AnandaBlackPersonalUseRegular-rg9Rx.ttf");
+}
+.solo{
+    font-family: myfont;
+    transform: skew(35deg, 2deg);
+    padding-left: 90px;
+}
+.dress-code {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.dress-code .text {
+    margin-left: 20px; /* Atur jarak antara logo dan teks */
+    font-family: Arial, sans-serif; /* Ganti font sesuai kebutuhan */
+    color: #333; /* Ganti warna teks sesuai kebutuhan */
+}
+.dollar{
+    display: flex;
+    align-items: center;
+    margin-left: 20%;
+}
+.dollar .text{
+    margin-left: 20px; 
+    font-family: Arial, sans-serif; 
+    color: #333;
+}
+/* .dollar i{
+    float: right;
+    display: flex;
+} */
+.text span{
+    font-weight: bold;
+}
+/* CSS untuk perangkat seluler */
+@media only screen and (max-width: 600px) {
+    .container {
+        overflow-y: scroll; /* Tambahkan scroll vertikal pada container di perangkat seluler */
+        -webkit-overflow-scrolling: touch; /* Aktifkan smooth scrolling untuk perangkat iOS */
+        animation: changeColor 10s infinite;
+    }
+
+    @keyframes changeColor {
+        0% { background-color: #0c192c; } /* Warna awal */
+        50% { background-color: #4fc3dc; } /* Warna pertengahan */
+        100% { background-color: #ff2d75; } /* Warna akhir */
+    }
+    .box1 {
+        width: 90%; /* Mengurangi lebar kotak untuk perangkat seluler */
+        margin: 5% auto; /* Posisikan kotak di tengah */
+        height: auto; /* Atur tinggi kotak agar disesuaikan dengan konten */
+    }
+    .marquee {
+        font-size: 16px; /* Ukuran font yang lebih kecil untuk perangkat seluler */
+        top: 5%;
+    }
+
+    .marquee span {
+        padding-left: 50%; /* Posisikan teks berjalan lebih ke kanan untuk perangkat seluler */
+    }
+    .text-with-image {
+        text-align: center; /* Menengahkan teks di perangkat seluler */
+    }
+
+    .text-with-image img {
+        display: block; /* Mengatur gambar agar tampil sebagai blok di tengah */
+        margin: 20px auto; /* Atur jarak atas dan bawah gambar */
+    }
+
+    .dress-code,
+    .dollar {
+        flex-direction: column; /* Mengatur tata letak kolom untuk ikon dan teks di perangkat seluler */
+        align-items: center; /* Menengahkan ikon dan teks di perangkat seluler */
+        margin-left: 0; /* Hapus margin kiri untuk perangkat seluler */
+        margin-top: 10px; /* Tambahkan margin atas untuk menjaga jarak antar elemen */
+        text-align: center;
+    }
+    .dollar .text {
+        margin-left: 0; /* Hapus margin kiri untuk teks dalam div dolar */
+        margin-top: 10px; /* Tambahkan margin atas untuk menjaga jarak antara ikon dan teks di perangkat seluler */
+    }
+    .dress-code .text, .dollar .text {
+        margin-bottom: 10px; /* Tambahkan jarak antara ikon dan teks */
+        margin-top: 20px;
+    }
+    i {
+        background: linear-gradient(to bottom, #ffcccc, #ff6666);
+        transition: background-color 0.3s ease; /* Animasi transisi efek hover */
+    }
+    
+    i:hover {
+        background: linear-gradient(to bottom, #ff6666, #ffcccc); /* Mengubah gradient warna saat hover */
+    }
+    
+    .diy{
+        margin-bottom: 50px;
+    }
+    .bubbles{
+        position: relative;
+        /* display: flex; */
+    }
+    .bubbles span{
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: #4fc3dc;
+        margin: 0 4px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 10px #4fc3dc44,
+        0 0 50px #4fc3dc,
+        0 0 100px #4fc3dc;
+        animation: animate 15s linear infinite;
+        animation-duration: calc(125s / var(--i));
+    }
+    .bubbles span:nth-child(even){
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,
+        0 0 50px #ff2d75,
+        0 0 100px #ff2d75;
+    }
+    @keyframes animate
+    {
+        0%{
+            transform: translateY(180vh) scale(0);
+        }
+        100%{
+            transform: translateY(-10vh) scale(1);
+        }
+    }
+}
